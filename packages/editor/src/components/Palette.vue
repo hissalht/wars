@@ -1,19 +1,25 @@
 <template>
   <div class="tile-palette">
-    <template v-for="(tile, i) in tileImages" :key="i">
-      <input
-        :id="'tile-' + i"
-        type="radio"
-        name="tile"
-        class="tile-palette__input"
-        :value="i"
-        :checked="i === modelValue"
-        @input="$emit('update:modelValue', $event.target.value)"
-      />
-      <label :for="'tile-' + i" class="tile-palette__label">
-        <img :src="tile" alt="" class="tile-palette__image" />
-      </label>
-    </template>
+    <div
+      v-for="(imageSources, category) in tilesImagesGroupedByCategory"
+      :key="category"
+      class="tile-palette__category"
+    >
+      <template v-for="tile in imageSources" :key="tile.id">
+        <input
+          :id="'tile-' + tile.id"
+          type="radio"
+          name="tile"
+          class="tile-palette__input"
+          :value="tile.id"
+          :checked="tile.id === modelValue"
+          @input="$emit('update:modelValue', $event.target.value)"
+        />
+        <label :for="'tile-' + tile.id" class="tile-palette__label">
+          <img :src="tile.url" alt="" class="tile-palette__image" />
+        </label>
+      </template>
+    </div>
   </div>
 </template>
 
@@ -33,11 +39,15 @@ export default {
   data: () => ({
     bitmap: null,
     tileImages: null,
+    tilesImagesGroupedByCategory: null,
   }),
   spritesheet,
   async mounted() {
     this.bitmap = await fetchSpriteSheet()
-    this.tileImages = this.$options.spritesheet.map(sprite => {
+
+    const tileImagesByCategory = {}
+
+    this.$options.spritesheet.forEach((sprite, i) => {
       const canvas = document.createElement('canvas')
       const context = canvas.getContext('2d')
       const source = sprite.source[0]
@@ -55,14 +65,22 @@ export default {
         source.w || 16,
         source.h || 16
       )
-      return canvas.toDataURL()
+      const url = canvas.toDataURL()
+
+      if (!tileImagesByCategory[sprite.type]) {
+        tileImagesByCategory[sprite.type] = [{ id: i, url }]
+      } else {
+        tileImagesByCategory[sprite.type].push({ id: i, url })
+      }
     })
+
+    this.tilesImagesGroupedByCategory = tileImagesByCategory
   },
 }
 </script>
 
 <style>
-.tile-palette {
+.tile-palette__category {
   display: flex;
   flex-wrap: wrap;
 }

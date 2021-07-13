@@ -1,15 +1,17 @@
 <template>
-  <palette v-model.number="selectedTile" class="app__palette" />
-  <map-preview
-    :tiles="mapData.tiles"
-    :width="mapData.width"
-    :height="mapData.height"
-    :scale="scale"
-    @mousedown="handleMousedown"
-    @mousemove="handleMousemove"
-    @mouseup="handleMouseup"
-    @wheel.prevent="handleMousewheel"
-  />
+  <div class="app">
+    <map-preview
+      :tiles="mapData.tiles"
+      :width="mapData.width"
+      :height="mapData.height"
+      :scale="scale"
+      @mousedown="handleMousedown"
+      @mousemove="handleMousemove"
+      @mouseup="handleMouseup"
+      @wheel.prevent="handleMousewheel"
+    />
+    <palette v-model.number="selectedTile" class="app__palette" />
+  </div>
 </template>
 
 <script>
@@ -56,7 +58,12 @@ export default {
 </script>
 
 <style>
-.app__palette {
-  margin-bottom: 1rem;
+.app {
+  display: flex;
+  padding: 2rem;
+}
+
+.app > * + * {
+  margin-left: 1rem;
 }
 </style>

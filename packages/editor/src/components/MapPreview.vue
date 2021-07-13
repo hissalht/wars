@@ -93,12 +93,6 @@ export default {
       e.preventDefault()
       // left click
       if (e.button === 0) {
-        console.log(
-          e.offsetX,
-          e.offsetY,
-          this.cameraPosition.x,
-          this.cameraPosition.y
-        )
         const tilePosition = {
           x: Math.floor(
             (e.offsetX + this.cameraPosition.x) / (16 * this.scale)
