@@ -1,13 +1,6 @@
 <template>
   <p>Hello</p>
-  <div>
-    <label>Tile</label>
-    <select v-model.number="selectedTile">
-      <option v-for="(sprite, i) in $options.spritesheet" :key="i" :value="i">
-        {{ sprite.type }}
-      </option>
-    </select>
-  </div>
+  <palette v-model.number="selectedTile" class="app__palette" />
   <map-preview
     :tiles="mapData.tiles"
     :width="mapData.width"
@@ -22,12 +15,13 @@
 
 <script>
 import MapPreview from './components/MapPreview.vue'
+import Palette from './components/Palette.vue'
 import mapData from './map-data'
 import spritesheet from './spritesheet'
 
 export default {
   name: 'App',
-  components: { MapPreview },
+  components: { MapPreview, Palette },
   spritesheet,
   data: () => ({
     mapData,
@@ -61,3 +55,9 @@ export default {
   },
 }
 </script>
+
+<style>
+.app__palette {
+  margin-bottom: 1rem;
+}
+</style>

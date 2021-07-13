@@ -11,8 +11,9 @@
 </template>
 
 <script>
-import spriteSheetUrl from '../assets/map-tileset.png'
 import spriteSheet from '../spritesheet'
+
+import fetchSpriteSheet from '../fetch-spritesheet'
 
 const ANIMATION_SPEED = 15
 
@@ -45,7 +46,7 @@ export default {
     },
   },
   async mounted() {
-    await this.fetchSpriteSheet()
+    this.bitmap = await fetchSpriteSheet()
     const loop = () => {
       this.frameCount += 1
       if (this.frameCount % ANIMATION_SPEED) {
@@ -56,12 +57,6 @@ export default {
     loop()
   },
   methods: {
-    async fetchSpriteSheet() {
-      const response = await fetch(spriteSheetUrl)
-      const blob = await response.blob()
-      const bitmap = await createImageBitmap(blob)
-      this.bitmap = bitmap
-    },
     drawMap() {
       this.context.imageSmoothingEnabled = false
       this.context.clearRect(0, 0, 500, 500)
