@@ -2,8 +2,8 @@
   <canvas
     ref="canvas"
     class="map-preview"
-    width="500"
-    height="500"
+    width="800"
+    height="800"
     @mousedown="onMousedown"
     @mouseup="onMouseup"
     @mousemove="onMousemove"
@@ -59,7 +59,7 @@ export default {
   methods: {
     drawMap() {
       this.context.imageSmoothingEnabled = false
-      this.context.clearRect(0, 0, 500, 500)
+      this.context.clearRect(0, 0, 800, 800)
       for (let y = 0; y < this.height; y++) {
         for (let x = 0; x < this.width; x++) {
           const tile = this.tiles[y * this.width + x]
