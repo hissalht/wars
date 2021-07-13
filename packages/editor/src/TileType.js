@@ -5,4 +5,6 @@ export default {
   SHOAL: 'SHOAL',
   FOREST: 'FOREST',
   MOUNTAIN: 'MOUNTAIN',
+  REEFS: 'REEFS',
+  BRIDGE: 'BRIDGE',
 }

@@ -61,6 +61,7 @@ export default {
 <style>
 .tile-palette {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tile-palette__input {
