@@ -1,5 +1,4 @@
 <template>
-  <p>Hello</p>
   <palette v-model.number="selectedTile" class="app__palette" />
   <map-preview
     :tiles="mapData.tiles"

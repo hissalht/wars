@@ -30,7 +30,10 @@ export default {
     },
   },
   emits: ['update:modelValue'],
-  data: () => ({ bitmap: null, tileImages: null }),
+  data: () => ({
+    bitmap: null,
+    tileImages: null,
+  }),
   spritesheet,
   async mounted() {
     this.bitmap = await fetchSpriteSheet()
