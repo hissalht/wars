@@ -7,4 +7,13 @@ export default {
   MOUNTAIN: 'MOUNTAIN',
   REEFS: 'REEFS',
   BRIDGE: 'BRIDGE',
+  HQ: 'HQ',
+  CITY: 'CITY',
+  BASE: 'BASE',
+  AIRPORT: 'AIRPORT',
+  PORT: 'PORT',
+  TOWER: 'TOWER',
+  LAB: 'LAB',
+  MISSILE: 'MISSILE',
+  MISSILE_EMPTY: 'MISSILE_EMPTY',
 }

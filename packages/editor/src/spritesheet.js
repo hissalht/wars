@@ -589,7 +589,7 @@ export default [
 
   // shoal tiles
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 214, y: 94 },
       { x: 214, y: 164 },
@@ -598,7 +598,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 214, y: 111 },
       { x: 214, y: 181 },
@@ -607,7 +607,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 214, y: 128 },
       { x: 214, y: 198 },
@@ -616,7 +616,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 214, y: 145 },
       { x: 214, y: 215 },
@@ -625,7 +625,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 231, y: 94 },
       { x: 231, y: 164 },
@@ -634,7 +634,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 231, y: 111 },
       { x: 231, y: 181 },
@@ -643,7 +643,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 231, y: 128 },
       { x: 231, y: 198 },
@@ -652,7 +652,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 231, y: 145 },
       { x: 231, y: 215 },
@@ -661,7 +661,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 248, y: 94 },
       { x: 248, y: 164 },
@@ -670,7 +670,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 248, y: 111 },
       { x: 248, y: 181 },
@@ -679,7 +679,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 248, y: 128 },
       { x: 248, y: 198 },
@@ -688,7 +688,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 248, y: 145 },
       { x: 248, y: 215 },
@@ -697,7 +697,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 265, y: 94 },
       { x: 265, y: 164 },
@@ -706,7 +706,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 265, y: 111 },
       { x: 265, y: 181 },
@@ -715,7 +715,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 265, y: 128 },
       { x: 265, y: 198 },
@@ -724,7 +724,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 265, y: 145 },
       { x: 265, y: 215 },
@@ -733,7 +733,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 282, y: 94 },
       { x: 282, y: 164 },
@@ -742,7 +742,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 282, y: 111 },
       { x: 282, y: 181 },
@@ -751,7 +751,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 282, y: 128 },
       { x: 282, y: 198 },
@@ -760,7 +760,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 282, y: 145 },
       { x: 282, y: 215 },
@@ -769,7 +769,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 299, y: 94 },
       { x: 299, y: 164 },
@@ -778,7 +778,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 299, y: 111 },
       { x: 299, y: 181 },
@@ -787,7 +787,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 299, y: 128 },
       { x: 299, y: 198 },
@@ -796,7 +796,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 299, y: 145 },
       { x: 299, y: 215 },
@@ -805,7 +805,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 316, y: 94 },
       { x: 316, y: 164 },
@@ -814,7 +814,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 316, y: 111 },
       { x: 316, y: 181 },
@@ -823,7 +823,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 316, y: 128 },
       { x: 316, y: 198 },
@@ -832,7 +832,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 316, y: 145 },
       { x: 316, y: 215 },
@@ -841,7 +841,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 333, y: 94 },
       { x: 333, y: 164 },
@@ -850,7 +850,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 333, y: 111 },
       { x: 333, y: 181 },
@@ -859,7 +859,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 333, y: 128 },
       { x: 333, y: 198 },
@@ -868,7 +868,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 333, y: 145 },
       { x: 333, y: 215 },
@@ -877,7 +877,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 350, y: 94 },
       { x: 350, y: 164 },
@@ -886,7 +886,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 350, y: 111 },
       { x: 350, y: 181 },
@@ -895,7 +895,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 350, y: 128 },
       { x: 350, y: 198 },
@@ -904,7 +904,7 @@ export default [
     ],
   },
   {
-    type: 'SHOAL',
+    type: T.SHOAL,
     source: [
       { x: 350, y: 145 },
       { x: 350, y: 215 },
@@ -915,7 +915,7 @@ export default [
 
   // river tiles
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 369, y: 94 },
       { x: 369, y: 164 },
@@ -924,7 +924,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 369, y: 111 },
       { x: 369, y: 181 },
@@ -933,7 +933,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 369, y: 128 },
       { x: 369, y: 198 },
@@ -942,7 +942,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 369, y: 145 },
       { x: 369, y: 215 },
@@ -951,7 +951,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 386, y: 94 },
       { x: 386, y: 164 },
@@ -960,7 +960,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 386, y: 111 },
       { x: 386, y: 181 },
@@ -969,7 +969,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 386, y: 128 },
       { x: 386, y: 198 },
@@ -978,7 +978,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 386, y: 145 },
       { x: 386, y: 215 },
@@ -987,7 +987,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 403, y: 94 },
       { x: 403, y: 164 },
@@ -996,7 +996,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 403, y: 111 },
       { x: 403, y: 181 },
@@ -1005,7 +1005,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 403, y: 128 },
       { x: 403, y: 198 },
@@ -1014,7 +1014,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 403, y: 145 },
       { x: 403, y: 215 },
@@ -1023,7 +1023,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 420, y: 94 },
       { x: 420, y: 164 },
@@ -1032,7 +1032,7 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 420, y: 111 },
       { x: 420, y: 181 },
@@ -1041,12 +1041,344 @@ export default [
     ],
   },
   {
-    type: 'RIVER',
+    type: T.RIVER,
     source: [
       { x: 420, y: 128 },
       { x: 420, y: 198 },
       { x: 420, y: 268 },
       { x: 420, y: 338 },
     ],
+  },
+
+  // HQ tiles
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 1, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 18, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 35, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 52, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.HQ,
+    source: [{ x: 69, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // city tiles
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.CITY,
+    source: [{ x: 86, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // base tiles
+  {
+    type: T.BASE,
+    source: [{ x: 103, y: 773 }],
+  },
+
+  // airport tiles
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.AIRPORT,
+    source: [{ x: 120, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // port tiles
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.PORT,
+    source: [{ x: 137, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // com tower tiles
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.TOWER,
+    source: [{ x: 154, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // lab tiles
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 803, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 836, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 869, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 902, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+  {
+    type: T.LAB,
+    source: [{ x: 171, y: 935, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // missile tile
+  {
+    type: T.MISSILE,
+    source: [{ x: 188, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
+  },
+
+  // empty missile tile
+  {
+    type: T.MISSILE_EMPTY,
+    source: [{ x: 205, y: 757, w: 16, h: 32 }],
+    offset: { x: 0, y: -16 },
   },
 ]

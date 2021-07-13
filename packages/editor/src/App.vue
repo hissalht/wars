@@ -29,7 +29,7 @@ export default {
   spritesheet,
   data: () => ({
     mapData,
-    scale: 3,
+    scale: 2,
     drawing: false,
     selectedTile: 0,
   }),

@@ -11,11 +11,24 @@
 </template>
 
 <script>
+import TileType from '../TileType'
 import spriteSheet from '../spritesheet'
 
 import fetchSpriteSheet from '../fetch-spritesheet'
 
 const ANIMATION_SPEED = 15
+const PROPERTY_LIST = [
+  TileType.HQ,
+  TileType.CITY,
+  TileType.BASE,
+  TileType.AIRPORT,
+  TileType.PORT,
+  TileType.TOWER,
+  TileType.LAB,
+  TileType.MISSILE,
+  TileType.MISSILE_EMPTY,
+]
+const PLAIN_TILE_ID = 0
 
 export default {
   name: 'MapPreview',
@@ -36,7 +49,7 @@ export default {
   data: () => ({
     bitmap: null,
     frameCount: 0,
-    cameraPosition: { x: -8, y: -58 },
+    cameraPosition: { x: -79, y: -68 },
     movingCamera: false,
   }),
   computed: {
@@ -65,12 +78,29 @@ export default {
           const tile = this.tiles[y * this.width + x]
           const sprite = spriteSheet[tile]
 
+          const isProperty = PROPERTY_LIST.includes(sprite.type)
+
           const sourceIndex =
             Math.floor(this.frameCount / ANIMATION_SPEED) % sprite.source.length
           const offset = sprite.offset || { x: 0, y: 0 }
 
           const width = sprite.source[sourceIndex].w || 16
           const height = sprite.source[sourceIndex].h || 16
+
+          if (isProperty) {
+            // draw background plain for properties
+            this.context.drawImage(
+              this.bitmap,
+              spriteSheet[PLAIN_TILE_ID].source[0].x,
+              spriteSheet[PLAIN_TILE_ID].source[0].y,
+              16,
+              16,
+              x * 16 * this.scale - this.cameraPosition.x,
+              y * 16 * this.scale - this.cameraPosition.y,
+              16 * this.scale,
+              16 * this.scale
+            )
+          }
 
           this.context.drawImage(
             this.bitmap,
@@ -144,5 +174,7 @@ export default {
 <style>
 .map-preview {
   border: 1px solid black;
+  width: 50rem;
+  height: 50rem;
 }
 </style>
