@@ -1,0 +1,5 @@
+{
+  "name": "@wars/server",
+  "description": "Backend server for the Wars project",
+  "version": "0.0.1"
+}
