@@ -2,6 +2,7 @@
   <div class="app">
     <map-preview
       :tiles="mapData.tiles"
+      :units="unitsData"
       :width="mapData.width"
       :height="mapData.height"
       :scale="scale"
@@ -21,7 +22,8 @@
 import MapPreview from './components/MapPreview.vue'
 import Palette from './components/Palette.vue'
 import mapData from './map-data'
-import spritesheet from './spritesheet'
+import unitsData from './units-data'
+import spritesheet from './tile-spritesheet'
 
 export default {
   name: 'App',
@@ -29,6 +31,7 @@ export default {
   spritesheet,
   data: () => ({
     mapData,
+    unitsData,
     scale: 2,
     drawing: false,
     selectedTile: 0,

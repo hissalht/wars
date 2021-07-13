@@ -12,9 +12,13 @@
 
 <script>
 import TileType from '../TileType'
-import spriteSheet from '../spritesheet'
+import spriteSheet from '../tile-spritesheet'
+import unitSpritesheet from '../unit-spritesheet'
 
-import fetchSpriteSheet from '../fetch-spritesheet'
+import {
+  fetchTileSpriteSheet,
+  fetchUnitSpriteSheet,
+} from '../fetch-spritesheet'
 
 const ANIMATION_SPEED = 15
 const PROPERTY_LIST = [
@@ -44,10 +48,15 @@ export default {
       type: Array,
       required: true,
     },
+    units: {
+      type: Array,
+      required: true,
+    },
   },
   emits: ['mousedown', 'mousemove'],
   data: () => ({
-    bitmap: null,
+    tileBitmap: null,
+    unitBitmap: null,
     frameCount: 0,
     cameraPosition: { x: -79, y: -68 },
     movingCamera: false,
@@ -59,7 +68,8 @@ export default {
     },
   },
   async mounted() {
-    this.bitmap = await fetchSpriteSheet()
+    this.tileBitmap = await fetchTileSpriteSheet()
+    this.unitBitmap = await fetchUnitSpriteSheet()
     const loop = () => {
       this.frameCount += 1
       if (this.frameCount % ANIMATION_SPEED) {
@@ -73,6 +83,7 @@ export default {
     drawMap() {
       this.context.imageSmoothingEnabled = false
       this.context.clearRect(0, 0, 800, 800)
+
       for (let y = 0; y < this.height; y++) {
         for (let x = 0; x < this.width; x++) {
           const tile = this.tiles[y * this.width + x]
@@ -90,7 +101,7 @@ export default {
           if (isProperty) {
             // draw background plain for properties
             this.context.drawImage(
-              this.bitmap,
+              this.tileBitmap,
               spriteSheet[PLAIN_TILE_ID].source[0].x,
               spriteSheet[PLAIN_TILE_ID].source[0].y,
               16,
@@ -103,7 +114,7 @@ export default {
           }
 
           this.context.drawImage(
-            this.bitmap,
+            this.tileBitmap,
             sprite.source[sourceIndex].x,
             sprite.source[sourceIndex].y,
             width,
@@ -114,6 +125,26 @@ export default {
             height * this.scale
           )
         }
+      }
+
+      for (let i = 0; i < this.units.length; i++) {
+        const unit = this.units[i]
+        const sprite = unitSpritesheet[unit.type]
+
+        const sourceIndex =
+          Math.floor(this.frameCount / ANIMATION_SPEED) % sprite.source.length
+
+        this.context.drawImage(
+          this.unitBitmap,
+          sprite.source[sourceIndex].x,
+          sprite.source[sourceIndex].y,
+          16,
+          16,
+          unit.position.x * 16 * this.scale - this.cameraPosition.x,
+          unit.position.y * 16 * this.scale - this.cameraPosition.y,
+          16 * this.scale,
+          16 * this.scale
+        )
       }
     },
     /**

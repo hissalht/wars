@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import fetchSpriteSheet from '../fetch-spritesheet'
-import spritesheet from '../spritesheet'
+import { fetchTileSpriteSheet } from '../fetch-spritesheet'
+import spritesheet from '../tile-spritesheet'
 
 export default {
   name: 'Palette',
@@ -43,7 +43,7 @@ export default {
   }),
   spritesheet,
   async mounted() {
-    this.bitmap = await fetchSpriteSheet()
+    this.bitmap = await fetchTileSpriteSheet()
 
     const tileImagesByCategory = {}
 
