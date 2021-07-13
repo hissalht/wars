@@ -5,6 +5,7 @@
     width="500"
     height="500"
     @mousedown="onMousedown"
+    @mouseup="onMouseup"
     @mousemove="onMousemove"
   />
 </template>
@@ -31,7 +32,12 @@ export default {
     },
   },
   emits: ['mousedown', 'mousemove'],
-  data: () => ({ bitmap: null, frameCount: 0 }),
+  data: () => ({
+    bitmap: null,
+    frameCount: 0,
+    cameraPosition: { x: -8, y: -58 },
+    movingCamera: false,
+  }),
   computed: {
     /** @returns {CanvasRenderingContext2D} */
     context() {
@@ -58,7 +64,7 @@ export default {
     },
     drawMap() {
       this.context.imageSmoothingEnabled = false
-      this.context.clearRect(0, 0, this.$refs.canvas.width, this.context.height)
+      this.context.clearRect(0, 0, 500, 500)
       for (let y = 0; y < this.height; y++) {
         for (let x = 0; x < this.width; x++) {
           const tile = this.tiles[y * this.width + x]
@@ -77,8 +83,8 @@ export default {
             sprite.source[sourceIndex].y,
             width,
             height,
-            x * 16 * this.scale + offset.x * this.scale,
-            y * 16 * this.scale + offset.y * this.scale,
+            x * 16 * this.scale + offset.x * this.scale - this.cameraPosition.x,
+            y * 16 * this.scale + offset.y * this.scale - this.cameraPosition.y,
             width * this.scale,
             height * this.scale
           )
@@ -89,18 +95,58 @@ export default {
      * @param {MouseEvent} e
      */
     onMousedown(e) {
-      const tilePosition = {
-        x: Math.floor(e.offsetX / (16 * this.scale)),
-        y: Math.floor(e.offsetY / (16 * this.scale)),
+      e.preventDefault()
+      // left click
+      if (e.button === 0) {
+        console.log(
+          e.offsetX,
+          e.offsetY,
+          this.cameraPosition.x,
+          this.cameraPosition.y
+        )
+        const tilePosition = {
+          x: Math.floor(
+            (e.offsetX + this.cameraPosition.x) / (16 * this.scale)
+          ),
+          y: Math.floor(
+            (e.offsetY + this.cameraPosition.y) / (16 * this.scale)
+          ),
+        }
+
+        const { x, y } = tilePosition
+
+        if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
+          this.$emit('mousedown', tilePosition)
+        }
       }
-      this.$emit('mousedown', tilePosition)
+
+      // middle click
+      if (e.button === 1) {
+        this.movingCamera = true
+      }
+    },
+    onMouseup(e) {
+      if (e.button === 1) {
+        this.movingCamera = false
+      }
     },
     onMousemove(e) {
-      const tilePosition = {
-        x: Math.floor(e.offsetX / (16 * this.scale)),
-        y: Math.floor(e.offsetY / (16 * this.scale)),
+      if (this.movingCamera) {
+        this.cameraPosition.x -= e.movementX
+        this.cameraPosition.y -= e.movementY
+        return
       }
-      this.$emit('mousemove', tilePosition)
+
+      const tilePosition = {
+        x: Math.floor((e.offsetX + this.cameraPosition.x) / (16 * this.scale)),
+        y: Math.floor((e.offsetY + this.cameraPosition.y) / (16 * this.scale)),
+      }
+
+      const { x, y } = tilePosition
+
+      if (x >= 0 && x < this.width && y >= 0 && y < this.height) {
+        this.$emit('mousemove', tilePosition)
+      }
     },
   },
 }

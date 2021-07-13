@@ -16,6 +16,7 @@
     @mousedown="handleMousedown"
     @mousemove="handleMousemove"
     @mouseup="handleMouseup"
+    @wheel.prevent="handleMousewheel"
   />
 </template>
 
@@ -30,7 +31,7 @@ export default {
   spritesheet,
   data: () => ({
     mapData,
-    scale: 2,
+    scale: 3,
     drawing: false,
     selectedTile: 0,
   }),
@@ -49,6 +50,13 @@ export default {
     },
     handleMouseup() {
       this.drawing = false
+    },
+    handleMousewheel(e) {
+      if (e.deltaY > 0) {
+        this.scale = Math.max(1, this.scale - 1)
+      } else if (e.deltaY < 0) {
+        this.scale = Math.min(5, this.scale + 1)
+      }
     },
   },
 }
