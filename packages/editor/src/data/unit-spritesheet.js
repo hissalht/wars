@@ -1,4 +1,4 @@
-import UnitType from '../enums/UnitType'
+import { UnitType } from '@wars/game'
 
 const U = UnitType
 

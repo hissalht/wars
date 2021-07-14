@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import TileType from '../enums/TileType'
+import { TileType } from '@wars/game'
 import spriteSheet from '../data/tile-spritesheet'
 import unitSpritesheet from '../data/unit-spritesheet'
 

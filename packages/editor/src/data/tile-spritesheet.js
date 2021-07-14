@@ -1,4 +1,4 @@
-import TileType from '../enums/TileType'
+import { TileType } from '@wars/game'
 
 const T = TileType
 

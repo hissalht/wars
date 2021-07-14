@@ -1,5 +1,9 @@
 {
   "name": "@wars/game",
   "description": "Game logic for the Wars project.",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "main": "./src/index.js",
+  "dependencies": {
+    "boardgame.io": "^0.45.1"
+  }
 }
