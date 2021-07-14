@@ -18,6 +18,7 @@ import unitSpritesheet from '../unit-spritesheet'
 import {
   fetchTileSpriteSheet,
   fetchUnitSpriteSheet,
+  getBlueUnitSpritesheet,
 } from '../fetch-spritesheet'
 
 const ANIMATION_SPEED = 15
@@ -57,6 +58,7 @@ export default {
   data: () => ({
     tileBitmap: null,
     unitBitmap: null,
+    blueUnitBitmap: null,
     frameCount: 0,
     cameraPosition: { x: -79, y: -68 },
     movingCamera: false,
@@ -70,6 +72,7 @@ export default {
   async mounted() {
     this.tileBitmap = await fetchTileSpriteSheet()
     this.unitBitmap = await fetchUnitSpriteSheet()
+    this.blueUnitBitmap = await getBlueUnitSpritesheet()
     const loop = () => {
       this.frameCount += 1
       if (this.frameCount % ANIMATION_SPEED) {
@@ -134,8 +137,10 @@ export default {
         const sourceIndex =
           Math.floor(this.frameCount / ANIMATION_SPEED) % sprite.source.length
 
+        const bitmap = unit.army === 1 ? this.blueUnitBitmap : this.unitBitmap
+
         this.context.drawImage(
-          this.unitBitmap,
+          bitmap,
           sprite.source[sourceIndex].x,
           sprite.source[sourceIndex].y,
           16,
