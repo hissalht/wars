@@ -1,3 +1,5 @@
+import UnitType from '../enums/UnitType'
+
 export default {
   width: 20,
   height: 20,
@@ -23,4 +25,20 @@ export default {
     10, 10, 17, 2, 0, 149, 0, 22, 40, 25, 25, 0, 0, 0, 0, 0, 14, 0, 117, 0, 2,
     3, 0, 0, 0, 0, 0, 0, 21, 25, 25,
   ],
+  units: Object.values(UnitType)
+    .map((unitType, i) => {
+      return [
+        {
+          type: unitType,
+          position: { x: i % 20, y: Math.floor(i / 20) },
+          army: 0,
+        },
+        {
+          type: unitType,
+          position: { x: i % 20, y: Math.floor(i / 20) + 2 },
+          army: 1,
+        },
+      ]
+    })
+    .flat(),
 }
