@@ -1235,10 +1235,12 @@ export default [
   },
 
   // base tiles
-  {
-    type: T.BASE,
-    source: [{ x: 103, y: 773 }],
-  },
+  { type: T.BASE, source: [{ x: 103, y: 773 }] },
+  { type: T.BASE, source: [{ x: 103, y: 819 }] },
+  { type: T.BASE, source: [{ x: 103, y: 852 }] },
+  { type: T.BASE, source: [{ x: 103, y: 885 }] },
+  { type: T.BASE, source: [{ x: 103, y: 918 }] },
+  { type: T.BASE, source: [{ x: 103, y: 951 }] },
 
   // airport tiles
   {
