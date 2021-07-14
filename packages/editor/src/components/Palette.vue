@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import { fetchTileSpriteSheet } from '../fetch-spritesheet'
-import spritesheet from '../tile-spritesheet'
+import { fetchTileSpriteSheet } from '../spritesheet'
+import spritesheet from '../data/tile-spritesheet'
 
 export default {
   name: 'Palette',

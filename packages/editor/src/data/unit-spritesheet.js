@@ -1,4 +1,4 @@
-import UnitType from './UnitType'
+import UnitType from '../enums/UnitType'
 
 const U = UnitType
 

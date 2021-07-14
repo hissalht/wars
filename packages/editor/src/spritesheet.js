@@ -1,6 +1,6 @@
 import tileSpritesheetUrl from './assets/map-tileset.png'
 import unitSpritesheetUrl from './assets/unit-tileset.png'
-import palettes from './unit-palettes'
+import palettes from './data/unit-palettes'
 
 /** @type {ImageBitmap} */
 let _tileBitmap = null
@@ -104,13 +104,7 @@ export async function getBlueUnitSpritesheet() {
     }
   }
 
-  ctx.putImageData(imageData, 0, 0)
-
-  const blob = await new Promise(resolve => {
-    canvas.toBlob(resolve)
-  })
-
-  _blueUnitBitmap = await createImageBitmap(blob)
+  _blueUnitBitmap = await createImageBitmap(imageData)
 
   return _blueUnitBitmap
 }

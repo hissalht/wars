@@ -1,4 +1,4 @@
-import TileType from './TileType'
+import TileType from '../enums/TileType'
 
 const T = TileType
 

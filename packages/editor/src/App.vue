@@ -21,9 +21,9 @@
 <script>
 import MapPreview from './components/MapPreview.vue'
 import Palette from './components/Palette.vue'
-import mapData from './map-data'
-import unitsData from './units-data'
-import spritesheet from './tile-spritesheet'
+import mapData from './data/map-data'
+import unitsData from './data/units-data'
+import spritesheet from './data/tile-spritesheet'
 
 export default {
   name: 'App',

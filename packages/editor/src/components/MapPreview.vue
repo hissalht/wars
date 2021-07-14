@@ -11,15 +11,15 @@
 </template>
 
 <script>
-import TileType from '../TileType'
-import spriteSheet from '../tile-spritesheet'
-import unitSpritesheet from '../unit-spritesheet'
+import TileType from '../enums/TileType'
+import spriteSheet from '../data/tile-spritesheet'
+import unitSpritesheet from '../data/unit-spritesheet'
 
 import {
   fetchTileSpriteSheet,
   fetchUnitSpriteSheet,
   getBlueUnitSpritesheet,
-} from '../fetch-spritesheet'
+} from '../spritesheet'
 
 const ANIMATION_SPEED = 15
 const PROPERTY_LIST = [
