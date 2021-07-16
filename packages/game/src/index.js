@@ -23,7 +23,7 @@ function initializeGame(data) {
 
   data.units.forEach((unit, i) => {
     const id = unit.type + "-" + i;
-    return { ...unit, id, ready: true };
+    units[id] = { ...unit, id, ready: true };
   });
 
   return {
