@@ -29,7 +29,7 @@ function initializeGame(data) {
   return {
     width: data.width,
     height: data.height,
-    tile: data.tiles,
+    tiles: data.tiles,
     units,
   };
 }

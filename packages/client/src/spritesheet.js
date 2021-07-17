@@ -106,8 +106,5 @@ export async function getBlueUnitSpritesheet() {
 
   _blueUnitBitmap = await createImageBitmap(imageData);
 
-  ctx.putImageData(imageData, 0, 0);
-  canvas.toBlob((blob) => console.log(URL.createObjectURL(blob)));
-
   return _blueUnitBitmap;
 }
