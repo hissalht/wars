@@ -100,3 +100,20 @@ export function renderUnits(
     );
   }
 }
+
+export function renderCursor(
+  cursor,
+  context,
+  // frameCount,
+  scale = 1,
+  offsetX = 0,
+  offsetY = 0
+) {
+  context.fillStyle = "#fffa";
+  context.fillRect(
+    cursor.x * 16 * scale + offsetX,
+    cursor.y * 16 * scale + offsetY,
+    16 * scale,
+    16 * scale
+  );
+}

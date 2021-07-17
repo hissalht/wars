@@ -4,11 +4,12 @@
     :width="canvasWidth"
     :height="canvasHeight"
     ref="canvas"
+    @mousemove="handleMousemove"
   />
 </template>
 
 <script>
-import { renderTerrain, renderUnits } from "../renderer";
+import { renderTerrain, renderUnits, renderCursor } from "../renderer";
 import {
   fetchTileSpriteSheet,
   fetchUnitSpriteSheet,
@@ -29,11 +30,13 @@ export default {
     },
   },
   data: () => ({
-    frameCount: 0,
     tileBitmap: null,
     unitBitmaps: null,
     mapPositionX: 8,
     mapPositionY: 8,
+
+    frameCount: 0,
+    cursorPosition: null,
     running: false,
   }),
   computed: {
@@ -92,9 +95,39 @@ export default {
         this.mapPositionY
       );
 
+      if (this.cursorPosition) {
+        renderCursor(
+          this.cursorPosition,
+          this.context,
+          this.scale,
+          this.mapPositionX,
+          this.mapPositionY
+        );
+      }
+
       if (this.running) {
         requestAnimationFrame(this.loop);
       }
+    },
+    handleMousemove(e) {
+      this.cursorPosition = this.canvasCoordinatesToTileCoordinates(
+        e.offsetX,
+        e.offsetY
+      );
+    },
+    canvasCoordinatesToTileCoordinates(mouseX, mouseY) {
+      if (
+        mouseX < this.mapPositionX ||
+        mouseX >= this.mapPositionX + this.game.width * 16 * this.scale ||
+        mouseY < this.mapPositionY ||
+        mouseY >= this.mapPositionY + this.game.height * 16 * this.scale
+      ) {
+        // cursor is not over the terrain
+        return null;
+      }
+      const x = Math.floor((mouseX - this.mapPositionX) / (16 * this.scale));
+      const y = Math.floor((mouseY - this.mapPositionY) / (16 * this.scale));
+      return { x, y };
     },
   },
 };
