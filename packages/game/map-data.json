@@ -24,7 +24,7 @@
     3, 0, 0, 0, 0, 0, 0, 21, 25, 25
   ],
   "units": [
-    { "type": "INFANTRY", "position": { "x": 8, "y": 8 }, "army": 0 },
-    { "type": "INFANTRY", "position": { "x": 10, "y": 15 }, "army": 1 }
+    { "type": "INFANTRY", "position": { "x": 8, "y": 8 }, "player": "0" },
+    { "type": "INFANTRY", "position": { "x": 10, "y": 15 }, "player": "1" }
   ]
 }

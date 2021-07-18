@@ -15,8 +15,7 @@ export default {
 </script>
 
 <style>
-.app_canvas {
-  width: 50rem;
-  height: 50rem;
+#app {
+  padding: 1rem;
 }
 </style>

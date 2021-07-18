@@ -34,6 +34,10 @@ function initializeGame(data) {
   };
 }
 
+function _log(g) {
+  console.log(JSON.parse(JSON.stringify(g)));
+}
+
 export default {
   /** @returns {WarsGame} */
   setup() {
@@ -53,16 +57,19 @@ export default {
       const unit = G.units[unitId];
 
       if (!unit) {
+        console.log("No unit");
         return INVALID_MOVE;
       }
 
       const { currentPlayer } = ctx;
 
-      if (currentPlayer !== unit.army) {
+      if (currentPlayer !== unit.player) {
+        console.log("Wrong army unit");
         return INVALID_MOVE;
       }
 
       if (!unit.ready) {
+        console.log("Not ready");
         return INVALID_MOVE;
       }
 
@@ -74,12 +81,23 @@ export default {
         Math.abs(command.destination.y - unit.position.y);
 
       if (distance > movement) {
+        console.log("Too far");
         return INVALID_MOVE;
       }
 
       unit.position.x = command.destination.x;
       unit.position.y = command.destination.y;
       unit.ready = false;
+    },
+  },
+
+  turn: {
+    onEnd(G, ctx) {
+      Object.values(G.units)
+        .filter((u) => u.player === ctx.currentPlayer)
+        .forEach((u) => {
+          u.ready = true;
+        });
     },
   },
 };

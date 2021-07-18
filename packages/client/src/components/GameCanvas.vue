@@ -5,6 +5,7 @@
     :height="canvasHeight"
     ref="canvas"
     @mousemove="handleMousemove"
+    @click="handleClick"
   />
 </template>
 
@@ -28,6 +29,10 @@ export default {
       required: false,
       default: 1,
     },
+    playerId: {
+      type: String,
+      required: true,
+    },
   },
   data: () => ({
     tileBitmap: null,
@@ -36,8 +41,10 @@ export default {
     mapPositionY: 8,
 
     frameCount: 0,
-    cursorPosition: null,
     running: false,
+
+    cursorPosition: null,
+    selectedUnit: null,
   }),
   computed: {
     canvasWidth() {
@@ -114,6 +121,27 @@ export default {
         e.offsetX,
         e.offsetY
       );
+    },
+    handleClick(e) {
+      const { x, y } = this.cursorPosition;
+
+      if (this.selectedUnit) {
+        // move order
+        this.$emit("command", this.selectedUnit.id, {
+          destination: { x, y },
+          action: "WAIT",
+        });
+        this.selectedUnit = null;
+        return;
+      }
+
+      // selecting a unit
+      const unit = Object.values(this.game.units).find(
+        (u) => u.position.x === x && u.position.y === y
+      );
+      if (unit?.ready && unit?.player === this.playerId) {
+        this.selectedUnit = unit;
+      }
     },
     canvasCoordinatesToTileCoordinates(mouseX, mouseY) {
       if (

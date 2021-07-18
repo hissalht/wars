@@ -38,6 +38,8 @@ export function renderTerrain(
 
       const isProperty = PROPERTY_LIST.includes(sprite.type);
 
+      context.filter = "none";
+
       if (isProperty) {
         // draw background plain for properties
         context.drawImage(
@@ -85,7 +87,13 @@ export function renderUnits(
     const sourceIndex =
       Math.floor(frameCount / ANIMATION_SPEED) % sprite.source.length;
 
-    const bitmap = bitmaps[unit.army];
+    const bitmap = bitmaps[unit.player];
+
+    if (!unit.ready) {
+      context.filter = "brightness(0.7)";
+    } else {
+      context.filter = "none";
+    }
 
     context.drawImage(
       bitmap,
@@ -109,6 +117,7 @@ export function renderCursor(
   offsetX = 0,
   offsetY = 0
 ) {
+  context.filter = "none";
   context.fillStyle = "#fffa";
   context.fillRect(
     cursor.x * 16 * scale + offsetX,

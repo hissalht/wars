@@ -5,5 +5,8 @@
   "main": "./src/index.js",
   "dependencies": {
     "boardgame.io": "^0.45.1"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
   }
 }
