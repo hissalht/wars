@@ -1,4 +1,8 @@
-export default {
+/**
+ * @readonly
+ * @enum {string}
+ */
+const TileType = {
   PLAIN: "PLAIN",
   SEA: "SEA",
   ROAD: "ROAD",
@@ -17,3 +21,5 @@ export default {
   MISSILE: "MISSILE",
   MISSILE_EMPTY: "MISSILE_EMPTY",
 };
+
+export default TileType;
